@@ -57,7 +57,7 @@ pipeline {
             // Stop and remove the container if it exists, using '|| true' to prevent
             // the pipeline from failing if the container wasn't started (e.g., due to a build failure)
             sh "docker stop ${env.CONTAINER_NAME} || true"
-            sh "docker rm ${env.CONTAINER_NAME} || true"
+            sh "docker ${env.CONTAINER_NAME} || true"
             echo 'Docker container stopped and removed (if it was running).'
         }
         
